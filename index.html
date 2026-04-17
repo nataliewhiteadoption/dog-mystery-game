@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dog Toy Mystery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 12px;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 15px;
+      margin-top: 15px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: #ff914d;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card" id="scene1">
+  <h2>🚨 Dog Toy Mystery 🚨</h2>
+  <p>A toy has been DESTROYED.</p>
+  <p>We need your help to find the culprit.</p>
+  <button onclick="next('scene2')">Start Investigation</button>
+</div>
+
+<div class="card" id="scene2" style="display:none;">
+  <h2>🐶 Suspects</h2>
+  <p>One of these dogs is guilty...</p>
+  <button onclick="next('scene3')">Get First Clue</button>
+</div>
+
+<div class="card" id="scene3" style="display:none;">
+  <h2>🔎 Clue #1</h2>
+  <p>The culprit LOVES toys.</p>
+  <button onclick="next('scene4')">Next Clue</button>
+</div>
+
+<div class="card" id="scene4" style="display:none;">
+  <h2>🔎 Clue #2</h2>
+  <p>The dog had zoomies earlier.</p>
+  <button onclick="next('scene5')">Next Clue</button>
+</div>
+
+<div class="card" id="scene5" style="display:none;">
+  <h2>🔎 Final Clue</h2>
+  <p>The culprit was seen near the scene.</p>
+  <button onclick="next('scene6')">Solve It</button>
+</div>
+
+<div class="card" id="scene6" style="display:none;">
+  <h2>🎉 CASE SOLVED 🎉</h2>
+  <p>The culprit is...</p>
+  <h3>🐾 YOUR DOG NAME HERE 🐾</h3>
+  <p>Come meet them at the adoption tent!</p>
+</div>
+
+<script>
+function next(id) {
+  let cards = document.querySelectorAll('.card');
+  cards.forEach(card => card.style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+}
+</script>
+
+</body>
+</html>
